@@ -1,1 +1,382 @@
-Hello This is my first HTML document
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#c4ebd9",
+                        "on-primary-container": "#84aa99",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#b8b8b8",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#464747",
+                        "tertiary-fixed": "#ffdea6",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary": "#a8cfbd",
+                        "tertiary-fixed-dim": "#f7bd48",
+                        "on-tertiary": "#412d00",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353535",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed": "#e3e2e2",
+                        "surface-bright": "#393939",
+                        "secondary-container": "#484949",
+                        "outline": "#8b928e",
+                        "background": "#131313",
+                        "outline-variant": "#414844",
+                        "on-tertiary-fixed": "#271900",
+                        "tertiary": "#f7bd48",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "surface-tint": "#a8cfbd",
+                        "surface-dim": "#131313",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed": "#002116",
+                        "on-secondary": "#2f3131",
+                        "inverse-primary": "#426657",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#ce9925",
+                        "secondary": "#c6c6c6",
+                        "surface-variant": "#353535",
+                        "primary-container": "#1b3f32",
+                        "tertiary-container": "#4c3500",
+                        "on-error": "#690005",
+                        "on-primary": "#12372a",
+                        "surface-container": "#20201f",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#c1c8c3",
+                        "on-primary-fixed-variant": "#2a4e40",
+                        "primary-fixed-dim": "#a8cfbd",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-lg": ["IBM Plex Serif"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["IBM Plex Serif"],
+                        "label-technical": ["JetBrains Mono"],
+                        "headline-xl": ["IBM Plex Serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["4.5rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-technical": ["0.75rem", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-xl": ["3rem", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .pinstripe-divider {
+            position: relative;
+            height: 4px;
+            width: 100%;
+            background: transparent;
+        }
+        .pinstripe-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #f7bd48; /* Gold */
+        }
+        .pinstripe-divider::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #c6c6c6; /* Chrome */
+            opacity: 0.3;
+        }
+        .vertical-pinstripe {
+            width: 4px;
+            height: 100%;
+            position: relative;
+        }
+        .vertical-pinstripe::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: #f7bd48;
+        }
+        .vertical-pinstripe::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: #c6c6c6;
+            opacity: 0.3;
+        }
+        .gauge-ring {
+            background: radial-gradient(circle, #20201f 0%, #131313 100%);
+            border: 2px solid #414844;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .timeline-node {
+            position: relative;
+            z-index: 10;
+        }
+        .timeline-node::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: #131313;
+            border: 2px solid #f7bd48;
+            border-radius: 50%;
+            left: -14px;
+            top: 0;
+            box-shadow: 0 0 10px rgba(247, 189, 72, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-tertiary selection:text-on-tertiary">
+<!-- Top Navigation Bar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant shadow-sm docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-tertiary dark:text-tertiary uppercase">
+                ARIJEET DUTTA
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant font-label-technical hover:text-tertiary transition-colors" href="#">Home</a>
+<a class="text-tertiary font-bold border-b-2 border-tertiary pb-1" href="#">Experience</a>
+<a class="text-on-surface-variant font-label-technical hover:text-tertiary transition-colors" href="#">Projects</a>
+<a class="text-on-surface-variant font-label-technical hover:text-tertiary transition-colors" href="#">Skills</a>
+<button class="bg-tertiary text-on-tertiary px-6 py-2 rounded-lg font-label-technical hover:bg-tertiary-fixed-dim transition-all duration-300 border-t border-white/20 active:scale-95">
+                    Get in Touch
+                </button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-16">
+<!-- Profile Header Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start mb-24">
+<div class="lg:col-span-4 flex flex-col items-center lg:items-start gap-unit">
+<div class="gauge-ring w-64 h-64 rounded-full flex items-center justify-center relative p-2 mb-8">
+<div class="w-full h-full rounded-full overflow-hidden border-4 border-outline-variant">
+<img alt="Arijeet Dutta Profile" class="w-full h-full object-cover grayscale" data-alt="A professional portrait of a male computer science engineer in a dark, moody industrial setting. The lighting is dramatic, highlighting sharp features and a thoughtful expression, mimicking the cinematic look of high-end engineering brochures. The color palette is dominated by matte blacks and deep forest greens with a subtle vintage film grain texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_EP77HEmrQQwRELhgZUTpZUXiNQtkJxgjOpV4xWEfj4qrPHxmZNv3JCgcKHtaiQlF4SlJOwvwCrqs332WHCi_yugNEfh2lraj_9XXDQafYCUAXjOmcuYQJEHF7VmttpTrSRInHtQeGsYCZBsTsx3YZQ1CiI9520qnmIJBB2y-0zDLgNzTo8HX1f0gfNAdp8L7xMWqFpH2_06NXjgNPniO7quFtLMefosvHAn5Mlh0IBcAFYDOYwl3XX3L4yamuUgT3CmV_iW9KfDW"/>
+</div>
+<!-- Decorative Gauge Marking -->
+<div class="absolute -bottom-4 right-0 bg-surface-container-high border border-tertiary px-4 py-1 rounded-full shadow-lg">
+<span class="font-label-technical text-tertiary text-[10px] tracking-widest uppercase">IT Analyst // AMICUS</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<span class="font-label-technical text-tertiary tracking-[0.3em] uppercase mb-4 block">Engineered for Excellence</span>
+<h1 class="font-display-lg text-display-lg mb-6 leading-none">Crafting Digital <br/><span class="text-primary">Precision.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">
+                    Computer Science Engineer from SSIPMT Raipur, currently operating as an IT Analyst at Amicus Technology. Specializing in the mechanical precision of Data Science, Machine Learning, and Cloud Infrastructure. My approach blends industrial-grade reliability with modern technical craftsmanship.
+                </p>
+<div class="flex flex-wrap gap-4">
+<div class="bg-surface-container-high border-b-2 border-tertiary px-4 py-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="terminal">terminal</span>
+<span class="font-label-technical">DATA SCIENCE</span>
+</div>
+<div class="bg-surface-container-high border-b-2 border-tertiary px-4 py-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="cloud">cloud</span>
+<span class="font-label-technical">CLOUD ARCHITECTURE</span>
+</div>
+<div class="bg-surface-container-high border-b-2 border-tertiary px-4 py-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="bolt">bolt</span>
+<span class="font-label-technical">MACHINE LEARNING</span>
+</div>
+</div>
+</div>
+</section>
+<div class="pinstripe-divider mb-16"></div>
+<!-- Timeline Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Sidebar Labels -->
+<div class="lg:col-span-3">
+<h2 class="font-headline-md text-headline-md text-tertiary sticky top-24">CHRONOLOGY OF <br/>CRAFTSMANSHIP</h2>
+<p class="font-label-technical text-on-surface-variant mt-4 leading-relaxed">
+                    A record of academic discipline and industrial application.
+                </p>
+</div>
+<!-- Vertical Timeline -->
+<div class="lg:col-span-9 pl-8 border-l-2 border-outline-variant relative ml-4">
+<!-- WORK EXPERIENCE -->
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="engineering">engineering</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">Professional Tenure</h3>
+</div>
+<!-- Amicus Technology -->
+<div class="timeline-node mb-16 group">
+<div class="bg-surface-container-low border border-outline-variant p-gutter rounded-lg hover:border-tertiary transition-all duration-500 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 font-label-technical text-on-surface-variant opacity-20">2024—PRESENT</div>
+<div class="flex flex-col gap-unit">
+<span class="font-label-technical text-tertiary uppercase">Amicus Technology</span>
+<h4 class="font-headline-md text-headline-md mb-2">IT Analyst</h4>
+<p class="text-on-surface-variant mb-6 font-body-md max-w-2xl">
+                                    Specializing in Cloud infrastructure (AWS, Azure Synapse, Databricks) and strategic data analysis to drive organizational efficiency through automated machine learning workflows.
+                                </p>
+<div class="flex gap-4">
+<span class="px-3 py-1 border border-outline text-[10px] font-label-technical rounded">DATABRICKS</span>
+<span class="px-3 py-1 border border-outline text-[10px] font-label-technical rounded">AZURE SYNAPSE</span>
+<span class="px-3 py-1 border border-outline text-[10px] font-label-technical rounded">AWS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SDG Research Internship -->
+<div class="timeline-node group">
+<div class="bg-surface-container-low border border-outline-variant p-gutter rounded-lg hover:border-primary transition-all duration-500 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 font-label-technical text-on-surface-variant opacity-20">AUG 2022</div>
+<div class="flex flex-col gap-unit">
+<span class="font-label-technical text-primary uppercase">Sustainable Development Goals (SDG)</span>
+<h4 class="font-headline-md text-headline-md mb-2">Research Internship</h4>
+<p class="text-on-surface-variant mb-6 font-body-md max-w-2xl">
+                                    Applied technical methodologies to global sustainability challenges, focusing on data-driven research and analytical modelling to propose viable SDG interventions.
+                                </p>
+<div class="flex gap-4">
+<span class="px-3 py-1 border border-outline text-[10px] font-label-technical rounded">DATA RESEARCH</span>
+<span class="px-3 py-1 border border-outline text-[10px] font-label-technical rounded">PYTHON</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pinstripe-divider opacity-30 mb-20"></div>
+<!-- EDUCATION -->
+<div>
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="school">school</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tight">Academic Foundation</h3>
+</div>
+<!-- SSIPMT -->
+<div class="timeline-node group">
+<div class="bg-surface-container-low border border-outline-variant p-gutter rounded-lg hover:border-tertiary transition-all duration-500 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 font-label-technical text-on-surface-variant opacity-20">2019—2023</div>
+<div class="flex flex-col gap-unit">
+<span class="font-label-technical text-tertiary uppercase">SSIPMT Raipur</span>
+<h4 class="font-headline-md text-headline-md mb-2">B.Tech in Computer Science</h4>
+<p class="text-on-surface-variant mb-4 font-body-md max-w-2xl">
+                                    Rigorous engineering curriculum focused on core computational theory, software development life cycles, and advanced machine learning implementations.
+                                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+<div class="flex items-center gap-3 bg-background p-3 border-l-4 border-primary">
+<span class="font-label-technical text-[10px] text-primary">FIELD</span>
+<span class="font-body-md text-sm">Computer Science Engineering</span>
+</div>
+<div class="flex items-center gap-3 bg-background p-3 border-l-4 border-tertiary">
+<span class="font-label-technical text-[10px] text-tertiary">HONORS</span>
+<span class="font-body-md text-sm">Research Publication Ready</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Blueprint Overlay Section -->
+<section class="mt-32 relative overflow-hidden bg-surface-container-high rounded-xl p-12 border border-outline-variant">
+<div class="absolute -right-24 -bottom-24 opacity-5">
+<span class="material-symbols-outlined text-[400px]" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<h3 class="font-headline-xl text-headline-xl mb-6">Technical Arsenal</h3>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-4">
+<label class="font-label-technical text-tertiary uppercase text-[10px] tracking-widest">Languages</label>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-technical text-xs border-b border-outline-variant pb-1">
+<span>PYTHON</span>
+<span class="text-primary">MASTER</span>
+</div>
+<div class="flex justify-between font-label-technical text-xs border-b border-outline-variant pb-1">
+<span>SQL</span>
+<span class="text-primary">ADVANCED</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<label class="font-label-technical text-tertiary uppercase text-[10px] tracking-widest">Platforms</label>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-label-technical text-xs border-b border-outline-variant pb-1">
+<span>AWS / AZURE</span>
+<span class="text-primary">SYSTEMS</span>
+</div>
+<div class="flex justify-between font-label-technical text-xs border-b border-outline-variant pb-1">
+<span>DATABRICKS</span>
+<span class="text-primary">PIPELINES</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-background/50 border border-tertiary/20 p-gutter rounded-lg">
+<span class="material-symbols-outlined text-tertiary mb-4" data-icon="description">description</span>
+<h4 class="font-headline-md text-headline-md mb-2">Research Publication</h4>
+<p class="font-body-md text-on-surface-variant mb-6 italic">
+                        "Active research in Machine Learning applications for industrial diagnostics and predictive maintenance."
+                    </p>
+<button class="font-label-technical text-tertiary flex items-center gap-2 group hover:gap-4 transition-all">
+                        VIEW PAPER <span class="material-symbols-outlined" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t-2 border-double border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-gutter max-w-container-max mx-auto gap-unit">
+<div class="font-headline-xl text-headline-xl text-on-surface-variant opacity-20 uppercase">
+                ARIJEET DUTTA
+            </div>
+<div class="flex flex-col items-center md:items-end gap-2">
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant font-label-technical hover:text-tertiary transition-colors duration-200 uppercase" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-label-technical hover:text-tertiary transition-colors duration-200 uppercase" href="#">GitHub</a>
+<a class="text-on-surface-variant font-label-technical hover:text-tertiary transition-colors duration-200 uppercase" href="#">Email</a>
+</div>
+<div class="text-on-surface-variant font-label-technical opacity-50 uppercase text-[10px]">
+                    © 2024 ARIJEET DUTTA. MADE LIKE A GUN.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>
